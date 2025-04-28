@@ -91,9 +91,17 @@ QuickChat is a clean, scalable chat application written in SwiftUI that uses Fir
 
 The current version covers core chat functionality. Planned/desired features:
 
-- Offline support (cache messages locally)  
-- Media sharing (images, voice notes) 
+- Offline support (cache messages locally using SwiftData)  
+- Media sharing (images, voice notes)
+- Improved messsage delivery status management
+- Support Apple auth
 - Furnished UI and animations 
+- DSL - Design system language to standardise app typography and theming
+- Move colors to assets
+- Localise strings
+- Introduce micro SPM packages to better modularise codebase
+- Strict Swift6 concurrency and data safety
+
 
 ---
 
