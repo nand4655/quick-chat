@@ -38,7 +38,6 @@ struct LoginScreen: View {
             .padding()
             .padding(.top, 12)
             
-            
             Spacer()
             
             Text("Login with Apple coming soon...")

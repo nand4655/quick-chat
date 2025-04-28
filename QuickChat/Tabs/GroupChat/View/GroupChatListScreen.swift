@@ -42,12 +42,24 @@ struct GroupChatListScreen: View {
             }
             .frame(maxWidth: .infinity)
             .frame(height: 46)
+            .overlay(alignment: .bottom, content: {
+                Divider()
+            })
             
             Spacer()
             
             if viewModel.groups.isEmpty {
-                Text("No groups yet")
-                    .foregroundColor(.gray)
+                Image(.disease)
+                    .resizable()
+                    .frame(width: 80, height: 80)
+                    .scaledToFit()
+                
+                Text("No group chat found! \nCreate one by clicking on the plus icon in the top right corner.")
+                    .multilineTextAlignment(.center)
+                    .monospaced()
+                    .padding(.top)
+                
+                Spacer()
             } else {
                 List(viewModel.groups) { group in
                     HStack(spacing: 12) {
