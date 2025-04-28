@@ -1,0 +1,77 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    " %@" : {
+
+    },
+    "%@ is typing..." : {
+
+    },
+    "Add members in" : {
+
+    },
+    "Are you sure?" : {
+
+    },
+    "Click on the user to add/remove" : {
+
+    },
+    "Do you really want to log out?" : {
+
+    },
+    "Enter group name" : {
+
+    },
+    "Group name" : {
+
+    },
+    "Groups" : {
+
+    },
+    "Introducing " : {
+
+    },
+    "Log Out" : {
+
+    },
+    "Login with Apple coming soon..." : {
+
+    },
+    "Minimum 3 characters" : {
+
+    },
+    "No groups yet" : {
+
+    },
+    "Now chatting with friends made even more fun! \nWant to try it out? \nLogin now" : {
+
+    },
+    "q" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Q"
+          }
+        }
+      }
+    },
+    "QuickChat" : {
+
+    },
+    "Sign up with Google" : {
+
+    },
+    "Someone is typing..." : {
+
+    },
+    "Type a message..." : {
+
+    },
+    "You and %lld others" : {
+
+    }
+  },
+  "version" : "1.0"
+}

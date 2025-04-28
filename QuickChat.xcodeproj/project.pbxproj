@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1E70A5752DC00E450037B1F7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1E70A5742DC00E450037B1F7 /* FirebaseAuth */; };
+		1E70A5772DC00E450037B1F7 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1E70A5762DC00E450037B1F7 /* FirebaseCore */; };
+		1E80031F2DC00E7A00A806ED /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 1E80031E2DC00E7A00A806ED /* GoogleSignIn */; };
+		1E8003262DC0104600A806ED /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1E8003252DC0104600A806ED /* FirebaseDatabase */; };
+		1E8003282DC0104600A806ED /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1E8003272DC0104600A806ED /* FirebaseFirestore */; };
+		1E80032A2DC0104600A806ED /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1E8003292DC0104600A806ED /* FirebaseStorage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		1E041F9C2DBAA92A006FD3D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +38,22 @@
 		1E041FA52DBAA92A006FD3D0 /* QuickChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1E0424F42DBC9B86006FD3D0 /* Exceptions for "QuickChat" folder in "QuickChat" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 1E041F882DBAA92A006FD3D0 /* QuickChat */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1E041F8B2DBAA92A006FD3D0 /* QuickChat */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1E0424F42DBC9B86006FD3D0 /* Exceptions for "QuickChat" folder in "QuickChat" target */,
+			);
 			path = QuickChat;
 			sourceTree = "<group>";
 		};
@@ -52,6 +74,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E8003282DC0104600A806ED /* FirebaseFirestore in Frameworks */,
+				1E70A5752DC00E450037B1F7 /* FirebaseAuth in Frameworks */,
+				1E70A5772DC00E450037B1F7 /* FirebaseCore in Frameworks */,
+				1E8003262DC0104600A806ED /* FirebaseDatabase in Frameworks */,
+				1E80032A2DC0104600A806ED /* FirebaseStorage in Frameworks */,
+				1E80031F2DC00E7A00A806ED /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +106,7 @@
 				1E041F8B2DBAA92A006FD3D0 /* QuickChat */,
 				1E041F9E2DBAA92A006FD3D0 /* QuickChatTests */,
 				1E041FA82DBAA92A006FD3D0 /* QuickChatUITests */,
+				1E70A40F2DBFF6310037B1F7 /* Frameworks */,
 				1E041F8A2DBAA92A006FD3D0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +119,13 @@
 				1E041FA52DBAA92A006FD3D0 /* QuickChatUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1E70A40F2DBFF6310037B1F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +148,12 @@
 			);
 			name = QuickChat;
 			packageProductDependencies = (
+				1E70A5742DC00E450037B1F7 /* FirebaseAuth */,
+				1E70A5762DC00E450037B1F7 /* FirebaseCore */,
+				1E80031E2DC00E7A00A806ED /* GoogleSignIn */,
+				1E8003252DC0104600A806ED /* FirebaseDatabase */,
+				1E8003272DC0104600A806ED /* FirebaseFirestore */,
+				1E8003292DC0104600A806ED /* FirebaseStorage */,
 			);
 			productName = QuickChat;
 			productReference = 1E041F892DBAA92A006FD3D0 /* QuickChat.app */;
@@ -195,6 +237,10 @@
 			);
 			mainGroup = 1E041F802DBAA92A006FD3D0;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1E70A5732DC00E450037B1F7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				1E80031D2DC00E7A00A806ED /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1E041F8A2DBAA92A006FD3D0 /* Products */;
 			projectDirPath = "";
@@ -395,15 +441,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"QuickChat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"QuickChat/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 656NVH864F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuickChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,6 +458,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nand.kishore.QuickChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,15 +475,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"QuickChat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"QuickChat/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 656NVH864F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuickChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,6 +492,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nand.kishore.QuickChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -458,6 +514,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nand.kishore.QuickChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -477,6 +537,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nand.kishore.QuickChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -558,6 +622,58 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1E70A5732DC00E450037B1F7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.12.0;
+			};
+		};
+		1E80031D2DC00E7A00A806ED /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1E70A5742DC00E450037B1F7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E70A5732DC00E450037B1F7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		1E70A5762DC00E450037B1F7 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E70A5732DC00E450037B1F7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		1E80031E2DC00E7A00A806ED /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E80031D2DC00E7A00A806ED /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		1E8003252DC0104600A806ED /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E70A5732DC00E450037B1F7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		1E8003272DC0104600A806ED /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E70A5732DC00E450037B1F7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		1E8003292DC0104600A806ED /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E70A5732DC00E450037B1F7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1E041F812DBAA92A006FD3D0 /* Project object */;
 }
