@@ -14,6 +14,7 @@ QuickChat is a clean, scalable chat application written in SwiftUI that uses Fir
 - [Testing](#testing)  
 - [Folder Structure](#folder-structure)  
 - [License](#license)  
+- [How to Use](#how-to-use)
 
 ---
 
@@ -133,3 +134,54 @@ QuickChat/
 ## License
 
 This project is released under the MIT License. See `LICENSE` for details.
+
+## How to Use
+
+### Prerequisites
+- At least two iOS devices (or simulators) running iOS 17.0 or later
+- Google account(s) for authentication
+- Internet connection
+
+### Getting Started
+
+1. **Installation**
+   - Install the app on all devices you want to use for testing
+   - Make sure each device has a different Google account signed in
+
+2. **Sign In**
+   - Launch the app on each device
+   - Tap "Sign in with Google"
+   - Select your Google account when prompted
+   - Grant necessary permissions
+
+3. **One-on-One Chat**
+   - On the first device:
+     - Navigate to the Chat tab
+     - Select a user from the list
+     - Start sending messages
+   - On the second device:
+     - Messages will appear in real-time
+     - You'll see typing indicators when the other user is typing
+     - Message status (sent, delivered, read) will update automatically
+
+4. **Group Chat**
+   - On any device:
+     - Navigate to the Group Chat tab
+     - Tap the "+" button to create a new group
+     - Enter a group name
+     - Select multiple users to add to the group
+     - Start sending messages
+   - All group members will receive messages in real-time
+   - Group typing indicators show when any member is typing
+
+### Note
+- Apple Sign-In is currently not implemented but can be enabled by:
+  1. Adding Sign in with Apple capability in Xcode
+  2. Updating the Firebase configuration
+
+### Troubleshooting
+- If messages aren't appearing in real-time:
+  - Check internet connection
+  - Ensure both users are properly signed in
+- If typing indicators aren't working:
+  - Check if both users are online
