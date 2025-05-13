@@ -17,6 +17,7 @@ public protocol IAuthService {
     @discardableResult func signInWithApple() async -> AuthResult
     func singIn(with type: OAuthProviderType) async -> AuthResult
     func signOut() async -> AuthResult
+    func setCurrentUser() async
     func setIsLoggedIn() async
 }
 

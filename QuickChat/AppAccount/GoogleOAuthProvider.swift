@@ -13,7 +13,6 @@ import GoogleSignIn
 import FirebaseCore
 import UIKit
 import OSLog
-import Utility
 
 private let logger = Logger(subsystem:"com.QuickChat", category: "GoogleOAuthProvider")
 

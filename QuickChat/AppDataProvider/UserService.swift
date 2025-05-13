@@ -8,6 +8,7 @@
         
 
 import Foundation
+import FirebaseFirestore
 
 public protocol IUserService {
     func checkIfUserExists(uid: String) async throws -> Bool
@@ -16,6 +17,7 @@ public protocol IUserService {
     func listUsers() async throws -> [UserDetailsModel]
     func deleteUser(uid: String) async throws
     func updateUser(user: UserDetailsModel) async throws
+    func observeUsers(onChange: @escaping ([UserDetailsModel]) -> Void)
 }
 
 
@@ -51,4 +53,19 @@ public final class UserService: IUserService {
         try await dbService.update(collection: collectionName, id: user.uid, data: user)
     }
     
+    public func observeUsers(onChange: @escaping ([UserDetailsModel]) -> Void) {
+        Firestore.firestore()
+            .collection(collectionName)
+            .addSnapshotListener { snapshot, error in
+                if let error = error {
+                    print("Error observing users: \(error)")
+                    return
+                }
+                guard let docs = snapshot?.documents else {
+                    return
+                }
+                let users = docs.compactMap { try? $0.data(as: UserDetailsModel.self) }
+                onChange(users)
+            }
+    }
 }

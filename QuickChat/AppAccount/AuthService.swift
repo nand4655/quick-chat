@@ -28,6 +28,7 @@ public final class AuthService: IAuthService, @unchecked Sendable {
         self.googleOAuthProvider = googleOAuthProvider
         self.appleOAuthProvider = appleOAuthProvider
         Task {
+            await setCurrentUser()
             await setIsLoggedIn()
         }
     }
@@ -48,6 +49,7 @@ public final class AuthService: IAuthService, @unchecked Sendable {
         
         do {
             let authResult = try await _auth.signIn(with: credential)
+            await setCurrentUser()
             return .success(uid: authResult.user.uid)
         }
         catch(let e) {
@@ -64,6 +66,7 @@ public final class AuthService: IAuthService, @unchecked Sendable {
         
         do {
             let authResult = try await _auth.signIn(with: credential)
+            await setCurrentUser()
             return .success(uid: authResult.user.uid)
         }
         catch(let e) {
@@ -80,6 +83,7 @@ public final class AuthService: IAuthService, @unchecked Sendable {
         
         do {
             try _auth.signOut()
+            await setCurrentUser()
             await setIsLoggedIn()
             return .success(uid: uid)
         }
@@ -90,12 +94,17 @@ public final class AuthService: IAuthService, @unchecked Sendable {
         return .failure(.signedOutFailed)
     }
     
-    public func setIsLoggedIn() async {
+    public func setCurrentUser() async {
         await MainActor.run {
-            self.isLoggedIn = self._auth.currentUser != nil
             if let user = self._auth.currentUser {
                 self._currentUser =  UserDetailsModel(uid: user.uid, email: user.email, displayName: user.displayName, photoURL: user.photoURL?.absoluteString, createdAt: nil, lastLoginAt: nil)
             }
+        }
+    }
+    
+    public func setIsLoggedIn() async {
+        await MainActor.run {
+            self.isLoggedIn = self._auth.currentUser != nil
         }
     }
 }

@@ -14,6 +14,13 @@ class MockUserService: IUserService {
     var usersToReturn: [UserDetailsModel] = []
     var shouldThrow = false
     
+    var observeUsersHandler: (([UserDetailsModel]) -> Void)?
+    func observeUsers(onChange: @escaping ([UserDetailsModel]) -> Void) {
+        observeUsersHandler = onChange
+        // Immediately return current users for mock
+        onChange(usersToReturn)
+    }
+    
     func checkIfUserExists(uid: String) async throws -> Bool {
         if shouldThrow { throw NSError(domain: "Test", code: 1) }
         return usersToReturn.contains(where: { $0.uid == uid })

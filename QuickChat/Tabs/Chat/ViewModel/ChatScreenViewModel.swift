@@ -56,7 +56,8 @@ class ChatScreenViewModel {
         chatService.observeMessages(
             with: currentUser.uid,
             and: otherUser.uid
-        ) { [weak self] messages in
+        ) {
+            [weak self] messages in
             guard let self else { return }
             
             DispatchQueue.main.async {

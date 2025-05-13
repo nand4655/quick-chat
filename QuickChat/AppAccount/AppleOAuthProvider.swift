@@ -14,7 +14,6 @@ import GoogleSignIn
 import FirebaseCore
 import AuthenticationServices
 import CryptoKit
-import Utility
 
 public class AppleOAuthProvider: NSObject, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     private var continuation: CheckedContinuation<ASAuthorization, Error>?

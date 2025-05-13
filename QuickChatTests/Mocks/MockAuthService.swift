@@ -55,7 +55,7 @@ class MockAuthService: IAuthService {
     
     var stubbedIsLoggedIn: Bool = false
     var stubbedUserDetails: UserDetailsModel?
-    func setIsLoggedIn() async {
+    func setCurrentUser() async {
         isLoggedIn = stubbedIsLoggedIn
         currentUser = stubbedUserDetails
     }

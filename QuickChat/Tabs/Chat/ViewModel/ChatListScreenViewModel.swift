@@ -28,6 +28,7 @@ class ChatListScreenViewModel {
         Task {
             await loadUsers()
         }
+        observeNewUsers()
     }
     
     func loadUsers() async {
@@ -48,6 +49,23 @@ class ChatListScreenViewModel {
             }
         } catch {
             await MainActor.run { self.isLoading = false }
+        }
+    }
+    
+    func observeNewUsers() {
+        guard let userService else {
+            return
+        }
+        
+        guard let currentUserId = currentUser?.uid else {
+            return
+        }
+        
+        userService.observeUsers { [weak self] allUsers in
+            guard let self else { return }
+            Task { @MainActor in
+                self.users = allUsers.filter { $0.uid != currentUserId }
+            }
         }
     }
 }
